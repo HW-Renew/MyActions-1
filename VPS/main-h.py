@@ -324,27 +324,81 @@ def extendResult():
     # return result
 
 
-def push(body):
+def push():
     print('- waiting for push result')
-    # bark push
-    if BARK_KEY == '':
-        print('*** No BARK_KEY ***')
-    else:
-        barkurl = 'https://api.day.app/' + BARK_KEY
-        title = 'H-Extend'
-        rq_bark = requests.get(url=f'{barkurl}/{title}/{body}?isArchive=1')
-        if rq_bark.status_code == 200:
-            print('- bark push Done!')
-        else:
-            print('*** bark push fail! ***', rq_bark.content.decode('utf-8'))
     # tg push
     if TG_BOT_TOKEN == '' or TG_USER_ID == '':
         print('*** No TG_BOT_TOKEN or TG_USER_ID ***')
     else:
-        body = 'H-Extend\n\n' + body
-        server = 'https://api.telegram.org'
-        tgurl = server + '/bot' + TG_BOT_TOKEN + '/sendMessage'
-        rq_tg = requests.post(tgurl, data={'chat_id': TG_USER_ID, 'text': body}, headers={
+        title = '🎉   Information    🎉\n\n'
+        if extend-1-result == 'success':
+           extend-1-push = 'Hax  -  01   Success  ' + extend-1-time + '\n'
+        else:
+           extend-1-push = 'Hax  -  01   Failed  ' + '\n'
+        
+        if extend-2-result == 'success':
+           extend-2-push = 'Hax  -  02   Success  ' + extend-2-time + '\n'
+        else:
+           extend-2-push = 'Hax  -  02   Failed  ' + '\n'
+        
+        if extend-3-result == 'success':
+           extend-3-push = 'Hax  -  03   Success  ' + extend-3-time + '\n'
+        else:
+           extend-3-push = 'Hax  -  03   Failed  ' + '\n'
+        
+        if extend-4-result == 'success':
+           extend-4-push = 'Hax  -  04   Success  ' + extend-4-time + '\n'
+        else:
+           extend-4-push = 'Hax  -  04   Failed  ' + '\n'
+        
+        if extend-5-result == 'success':
+           extend-5-push = 'Hax  -  05   Success  ' + extend-5-time + '\n'
+        else:
+           extend-5-push = 'Hax  -  05   Failed  ' + '\n'
+        
+        if extend-6-result == 'success':
+           extend-6-push = 'Hax  -  06   Success  ' + extend-6-time + '\n'
+        else:
+           extend-6-push = 'Hax  -  06   Failed  ' + '\n'
+        
+        if extend-7-result == 'success':
+           extend-7-push = 'Hax  -  07   Success  ' + extend-7-time + '\n'
+        else:
+           extend-7-push = 'Hax  -  07   Failed  ' + '\n'
+        
+        if extend-8-result == 'success':
+           extend-8-push = 'Hax  -  08   Success  ' + extend-8-time + '\n'
+        else:
+           extend-8-push = 'Hax  -  08   Failed  ' + '\n'
+        
+        if extend-9-result == 'success':
+           extend-9-push = 'Hax  -  09   Success  ' + extend-9-time + '\n'
+        else:
+           extend-9-push = 'Hax  -  09   Failed  ' + '\n'
+        
+        if extend-10-result == 'success':
+           extend-10-push = 'Hax  -  10   Success  ' + extend-10-time + '\n'
+        else:
+           extend-10-push = 'Hax  -  10   Failed  ' + '\n'
+        
+        if extend-11-result == 'success':
+           extend-11-push = 'Hax  -  11   Success  ' + extend-11-time + '\n'
+        else:
+           extend-11-push = 'Hax  -  11   Failed  ' + '\n'
+        
+        if extend-12-result == 'success':
+           extend-12-push = 'Hax  -  12   Success  ' + extend-12-time + '\n'
+        else:
+           extend-12-push = 'Hax  -  12   Failed  ' + '\n'
+        
+        if extend-13-result == 'success':
+           extend-13-push = 'Hax  -  13   Success  ' + extend-13-time + '\n'
+        else:
+           extend-13-push = 'Hax  -  13   Failed  ' + '\n'
+        
+        tg-push = title + extend-1-push + extend-2-push + extend-3-push + extend-4-push + extend-5-push + extend-6-push + extend-7-push + extend-8-push + extend-9-push + extend-10-push + extend-11-push + extend-12-push + extend-13-push
+        tgapi = 'https://api.telegram.org' + '/bot' + TG_BOT_TOKEN + '/sendMessage'
+        rq_tg = requests.post(tgapi, data={'chat_id': TG_USER_ID, 'text': tg-push}, headers={
             'Content-Type': 'application/x-www-form-urlencoded'})
         if rq_tg.status_code == 200:
             print('- tg push Done!')
